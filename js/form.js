@@ -14,14 +14,9 @@ document.querySelector("#submit").addEventListener("click", e => {
     measurementId: "G-1VH7PCYE2E"
   };
 
-if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
-    resp.classList.add("fail");
-    resp.innerHTML = `Faltan algunos datos, ${nombre}`;
-    return false;
-  }
   resp.classList.remove("fail");
-  resp.classList.add("send");
-  resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`
+  resp.classList.remove("send");
+
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig)
@@ -45,6 +40,14 @@ if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis =
   acepto : document.querySelector("#acepto").value ,
   resp : document.querySelector("#respuesta") ,
     }
+    if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
+    resp.classList.add("fail");
+    resp.innerHTML = `Faltan algunos datos, ${nombre}`;
+    return false;
+  }
+    resp.classList.remove("fail");
+  resp.classList.add("send");
+  resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`;
     ref.push(data)
     }
 
