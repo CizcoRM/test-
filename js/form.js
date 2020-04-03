@@ -21,8 +21,6 @@ document.querySelector("#submit").addEventListener("click", e => {
   let ref = database.ref("formulario")
   function submitProduct(){
   
-      resp.classList.remove("fail");
-  resp.classList.remove("send");
     
     let data = {
   
@@ -41,6 +39,9 @@ document.querySelector("#submit").addEventListener("click", e => {
     ref.push(data)
     }
 
+      resp.classList.remove("fail");
+  resp.classList.remove("send");
+
  if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
     resp.classList.add("fail");
     resp.innerHTML = `Faltan algunos datos, ${nombre}`;
@@ -48,4 +49,4 @@ document.querySelector("#submit").addEventListener("click", e => {
   }
   resp.classList.remove("fail");
   resp.classList.add("send");
-  resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`;
+  resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`
