@@ -37,7 +37,6 @@ if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis =
   let database = firebase.database()
   let ref = database.ref("formulario")
   
-  function submitProduct(){
   
         let data = {
   nombre : document.querySelector("#nombre").value ,
@@ -52,9 +51,8 @@ if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis =
   acepto : document.querySelector("#acepto").value ,
   resp : document.querySelector("#respuesta") ,
     }
-  
-        ref.push(data)
-    }
+         ref.push(data)
+   
  }
   }
 
