@@ -43,4 +43,5 @@ resp.classList.remove("fail");
   resp.classList.add("send");
   resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`;
   ref.push(data)
+  window.open(url);
 }); 
