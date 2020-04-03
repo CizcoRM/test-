@@ -1,16 +1,18 @@
 document.querySelector("#submit").addEventListener("click", e => {
   e.preventDefault()
   ifcondition()
-  submitProduct()
+  
 })
-function ifcondition(){
+
+function ifcondition()
+{
+  submitProduct()
  resp.classList.remove("fail");
   resp.classList.remove("send");
 if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
     resp.classList.add("fail");
     resp.innerHTML = `Faltan algunos datos, ${nombre}`;
-    return false;
-  }
+ }
   
  else {
   resp.classList.remove("fail");
@@ -54,6 +56,7 @@ if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis =
         ref.push(data)
     }
  }
+  }
 
     
  
