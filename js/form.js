@@ -28,6 +28,7 @@ function ifcondition()
   firebase.initializeApp(firebaseConfig)
   let database = firebase.database()
   let ref = database.ref("formulario")
+   let url = `https://www.coec.cat/wp-content/uploads/2014/05/ico_ok.png`;
    
   let data = {
   nombre : document.querySelector("#nombre").value ,
@@ -45,6 +46,7 @@ function ifcondition()
   ref.push(data)
    
  }
+  window.open(url);
   }
 
     
