@@ -8,7 +8,7 @@ function ifcondition()
 {
   if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") 
   {
-    <p align="center">`Faltan algunos datos ${nombre}`</p>
+    <button id="nota" class="formulario__submit">Faltan algunos datos</button>
     }
   
  else {
