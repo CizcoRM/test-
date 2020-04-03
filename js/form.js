@@ -2,6 +2,15 @@ document.querySelector("#submit").addEventListener("click", e => {
   e.preventDefault()
   submitProduct()
 })
+ 
+if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
+    resp.classList.add("fail");
+    resp.innerHTML = `Faltan algunos datos, ${nombre}`;
+    return false;
+  }
+  resp.classList.remove("fail");
+  resp.classList.add("send");
+  resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`;
   
   var firebaseConfig = {
     apiKey: "AIzaSyBpNdAC-sRZ8bfL7YGjuwLiK_63wI_AqAY",
@@ -40,15 +49,9 @@ document.querySelector("#submit").addEventListener("click", e => {
   acepto : document.querySelector("#acepto").value ,
   resp : document.querySelector("#respuesta") ,
     }
-    if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
-    resp.classList.add("fail");
-    resp.innerHTML = `Faltan algunos datos, ${nombre}`;
-    return false;
+   
   }
-    resp.classList.remove("fail");
-  resp.classList.add("send");
-  resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`;
-    ref.push(data)
+        ref.push(data)
     }
 
     
