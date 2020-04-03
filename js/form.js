@@ -18,9 +18,12 @@ document.querySelector("#submit").addEventListener("click", e => {
   firebase.initializeApp(firebaseConfig)
   
   let database = firebase.database()
-  let ref = database.ref("products")
+  let ref = database.ref("formulario")
   function submitProduct(){
   
+      resp.classList.remove("fail");
+  resp.classList.remove("send");
+    
     let data = {
   
   nombre : document.querySelector("#nombre").value ,
@@ -37,3 +40,12 @@ document.querySelector("#submit").addEventListener("click", e => {
     }
     ref.push(data)
     }
+
+ if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
+    resp.classList.add("fail");
+    resp.innerHTML = `Faltan algunos datos, ${nombre}`;
+    return false;
+  }
+  resp.classList.remove("fail");
+  resp.classList.add("send");
+  resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`;
