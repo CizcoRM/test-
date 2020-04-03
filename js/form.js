@@ -1,13 +1,18 @@
 document.querySelector("#submit").addEventListener("click", e => {
   e.preventDefault()
+  ifcondition()
   submitProduct()
 })
- 
+function ifcondition(){
+ resp.classList.remove("fail");
+  resp.classList.remove("send");
 if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis === "" || subsidio === "" || salario === "" || negocio === "" || acepto === "" || tele === "") {
     resp.classList.add("fail");
     resp.innerHTML = `Faltan algunos datos, ${nombre}`;
     return false;
   }
+  
+ else {
   resp.classList.remove("fail");
   resp.classList.add("send");
   resp.innerHTML = `Se ha enviado tu formulario, ${nombre}`;
@@ -23,20 +28,16 @@ if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis =
     measurementId: "G-1VH7PCYE2E"
   };
 
-  resp.classList.remove("fail");
-  resp.classList.remove("send");
-
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig)
   
   let database = firebase.database()
   let ref = database.ref("formulario")
+  
   function submitProduct(){
   
-    
-    let data = {
-  
+        let data = {
   nombre : document.querySelector("#nombre").value ,
   dui : document.querySelector("#dui").value ,
   direccion : document.querySelector("#direccion").value ,
@@ -49,10 +50,10 @@ if (nombre === "" || dui === "" || direccion === "" || miembros === "" || duis =
   acepto : document.querySelector("#acepto").value ,
   resp : document.querySelector("#respuesta") ,
     }
-   
-  }
+  
         ref.push(data)
     }
+ }
 
     
  
