@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario Paquete Solidario</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <form action="" class="formulario">
+        
+        <img src="logo.png" class="imgLogo">
+        
+        <h1 class="formulario__titulo">FORMULARIOS</h1>
+        <h3 class="formulario__subtitulo">Para Paquete Solidario</h3>
+        <p class="formulario__parrafo">Llena este formulario para aplicar a la ayuda del paquete solidario, recuerda que la informacion que proporciones sea veridica y puede ser revisada.</p>
+       
+        <label for="nombre" class="formulario__label">¿Cuál es tu nombre?</label>
+        <input id="nombre" type="text" class="formulario__input" placeholder="Indica cuál es tu nombre completo">
+		
+		<label for="dui" class="formulario__label">Ingresa tu numero de DUI</label>
+        <input id="dui" type="text" class="formulario__input" placeholder="Indica tu numero de DUI">
+		
+		<label for="direccion" class="formulario__label">¿Ingresa tu dirección segun DUI?</label>
+        <input id="direccion" type="text" class="formulario__input" placeholder="Indica tu dirección">
+
+        <label for="tele" class="formulario__label">Ingresa tu numero de telefono</label>
+        <input id="tele" type="text" class="formulario__input" placeholder="Indica tu numero de telefono">
+        
+		<label for="miembros" class="formulario__label">¿Cuantos miembros son en tu familia?</label>
+        <input id="miembros" type="text" class="formulario__input" placeholder="Indica el numero de miembros en tu familia">
+		
+		<label for="duis" class="formulario__label">Ingresa los numeros de DUI de tus familiares separados por una coma (,).</label>
+        <input id="duis" type="text" class="formulario__input" placeholder="Ingresa TODOS los DUI de tus familiares, recuerda que esta informacion puede ser corroborada por un miembro del CMPCM">
+		  
+        <label for="subsidio" class="formulario__label">¿Algun miembro de tu familia salió beneficiado con el subsidio de $300 dolares brindado por el Gobierno Central?</label>
+        <select id="subsidio" name="listasubsidio" class="formulario__input">
+            <option>SI</option>
+            <option>NO</option>
+        </select>
+		
+		<label for="salario" class="formulario__label">¿Algun miembro de tu familia sigue recibiendo salario?</label>
+        <select id="salario" name="listasalario" class="formulario__input">
+            <option>SI</option>
+            <option>NO</option>
+        </select>
+        	    
+        <label for="negocio" class="formulario__label">¿Posees alguna tienda, negocio, comedor, forma de ingreso,?</label>
+        <input id="negocio" type="text" class="formulario__input" placeholder="Especifica que tipo de negocio">    
+        </select>
+		
+		<label for="acepto" class="formulario__label">Acepto que la informacion dada es veridica y que de no serlo no soy una persona aplicable a la ayuda, tambien acepto que una persona designada pueda verificar la veracidad de los datos proporcionados </label>
+        <select id="acepto" name="listaacepto" class="formulario__input">
+            <option>SI</option>
+            <option>NO</option>
+        </select>
+		
+        <div id="respuesta"></div>
+
+        <button id="submit" class="formulario__submit">Enviar</button>
+       
+    </form>
+    <script src="js/form.js"></script>
+</body>
+</html>
